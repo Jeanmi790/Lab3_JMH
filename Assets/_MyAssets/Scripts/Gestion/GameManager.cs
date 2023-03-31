@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -88,9 +89,13 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public string VoirStatistiqueNiv1()
+
+    public List<string> VoirStatistiqueNiv1()
     {
-        return "Temps Niv 1: " + tempsNiv1 + " Nombre d'accrochage Niv 1: " + nbAccrochageNiv1;
+        List<string> statistiqueN1 = new List<string>();
+        statistiqueN1.Add(tempsNiv1.ToString("f2"));
+        statistiqueN1.Add(nbAccrochageNiv1.ToString());
+        return statistiqueN1;
     }
 
     public string VoirStatistiqueNiv2()
