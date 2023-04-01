@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class EndGame : MonoBehaviour
 {
     GameManager _gameManager;
+    GestionScene _scene;
     bool _collision = false;
     Player _player;
 
@@ -25,25 +26,25 @@ public class EndGame : MonoBehaviour
 
             switch (noScene)
             {
-                case 0:
+                case 1:
                     _gameManager.StatistiqueNiv1(_gameManager.retournerAccrochage(), Time.time);
                     _collision = true;
                     Debug.Log("Prochain niveau...");
                     _gameManager.ReinitialiserAccrochage();
-                    SceneManager.LoadScene(noScene + 1);
-
-                    break;
-
-                case 1:
-                    _gameManager.StatistiqueNiv2(_gameManager.retournerAccrochage(), Time.time);
-                    _collision = true;
-                    Debug.Log("Dernier niveau...");
-                    _gameManager.ReinitialiserAccrochage();
-                    SceneManager.LoadScene(noScene + 1);
+                   _scene.ChargerProchaineScene();
 
                     break;
 
                 case 2:
+                    _gameManager.StatistiqueNiv2(_gameManager.retournerAccrochage(), Time.time);
+                    _collision = true;
+                    Debug.Log("Dernier niveau...");
+                    _gameManager.ReinitialiserAccrochage();
+                    _scene.ChargerProchaineScene();
+
+                    break;
+
+                case 3:
                     _gameManager.StatistiqueNiv3(_gameManager.retournerAccrochage(), Time.time);
                     _collision = true;
                     _gameManager.FinJeu();

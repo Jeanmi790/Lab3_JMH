@@ -92,9 +92,11 @@ public class GameManager : MonoBehaviour
 
     public List<string> VoirStatistiqueNiv1()
     {
-        List<string> statistiqueN1 = new List<string>();
-        statistiqueN1.Add(tempsNiv1.ToString("f2"));
-        statistiqueN1.Add(nbAccrochageNiv1.ToString());
+        List<string> statistiqueN1 = new List<string>
+        {
+            tempsNiv1.ToString("f2"),
+            nbAccrochageNiv1.ToString()
+        };
         return statistiqueN1;
     }
 
@@ -118,7 +120,7 @@ public class GameManager : MonoBehaviour
     public void FinJeu()
     {
 
-        Debug.Log(VoirStatistiqueNiv1());
+        Debug.Log(VoirStatistiqueNiv1()[0]+" "+ VoirStatistiqueNiv1()[1]);
         Debug.Log(VoirStatistiqueNiv2());
         Debug.Log(VoirStatistiqueNiv3());
         Debug.Log(VoirStatistiqueTotal());
