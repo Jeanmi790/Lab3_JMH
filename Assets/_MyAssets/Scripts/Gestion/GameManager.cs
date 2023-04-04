@@ -4,6 +4,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     int _accrochage;
+    float _tempsDebut;
+    float _tempsFinal;
+
     float tempsNiv1;
     float tempsNiv2;
     float tempsNiv3;
@@ -26,11 +29,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+
     void Start()
     {
         Instructions();
         _accrochage = 0;
+        _tempsDebut = Time.time;
+
 
     }
 
@@ -46,6 +51,8 @@ public class GameManager : MonoBehaviour
     public void AugmenterAccrochage()
     {
         _accrochage++;
+        UIManager _uiManager = new();
+        _uiManager.AffichageAccrochage(_accrochage);
 
     }
 
@@ -57,7 +64,22 @@ public class GameManager : MonoBehaviour
     public void ReinitialiserAccrochage()
     {
         _accrochage = 0;
-        
+
+    }
+
+    public float retournerTempDebut()
+    {
+        return _tempsDebut;
+    }
+
+    public void calculerTempsFin(float temps)
+    {
+        _tempsFinal = temps - _tempsDebut;
+    }
+
+    public float retournerTempsFinal()
+    {
+        return _tempsFinal;
     }
 
     public void StatistiqueNiv1(int accrochages, float temps)
@@ -70,15 +92,15 @@ public class GameManager : MonoBehaviour
 
     public void StatistiqueNiv2(int accrochages, float temps)
     {
-        tempsNiv2 = temps + (1F * accrochages)-tempsNiv1;
+        tempsNiv2 = temps + (1F * accrochages) - tempsNiv1;
         nbAccrochageNiv2 = accrochages;
 
     }
 
     public void StatistiqueNiv3(int accrochages, float temps)
-    {   
-        tempsNiv3 = temps + (1F * accrochages)-tempsNiv2;
-       
+    {
+        tempsNiv3 = temps + (1F * accrochages) - tempsNiv2;
+
         nbAccrochageNiv3 = accrochages;
 
     }
@@ -120,7 +142,7 @@ public class GameManager : MonoBehaviour
     public void FinJeu()
     {
 
-        Debug.Log(VoirStatistiqueNiv1()[0]+" "+ VoirStatistiqueNiv1()[1]);
+        Debug.Log(VoirStatistiqueNiv1()[0] + " " + VoirStatistiqueNiv1()[1]);
         Debug.Log(VoirStatistiqueNiv2());
         Debug.Log(VoirStatistiqueNiv3());
         Debug.Log(VoirStatistiqueTotal());
