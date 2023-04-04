@@ -2750,12 +2750,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bienvenu, vous devez trouver la sortie du donjon qui est une porte en
-    bois.\n\nUtilisez W,A,S,D pour d\xE9placer votre personnage dans le donjon.\n\nVous
-    devez \xE9viter de toucher au mur avec des piques, les trappes au sol et les
-    squelettes.\n\nChaque obstacle vous rajoute une p\xE9nalit\xE9 sur votre temps
-    d'une seconde.\n\nIl y a un coffre dans le niveau qui permet de faire disparaitre
-    des obstacles pour atteindre la fin.\n\nVous avez 3 niveaux \xE0 compl\xE9ter.\n"
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09c34efbe76f8a5459eb60ec53fb193c, type: 2}
   m_sharedMaterial: {fileID: 2937597810072316318, guid: 09c34efbe76f8a5459eb60ec53fb193c, type: 2}
@@ -2789,7 +2786,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 32
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3392,6 +3389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _instructionPanel: {fileID: 1334953533}
+  _instructionText: {fileID: 1428304247}
 --- !u!4 &1854037452
 Transform:
   m_ObjectHideFlags: 0

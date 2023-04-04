@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     bool _enPause;
     int _tempsArrete = 0;
     int _tempsEcoule = 1;
-     GameManager _gameManager;
+    GameManager _gameManager;
 
 
     void Start()
@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
         _gameManager = FindObjectOfType<GameManager>();
         _txtAccrochages.text = "Accrochages : " + _gameManager.retournerAccrochage();
         Time.timeScale = _tempsEcoule;
+        _menuPause.SetActive(!true);
         _enPause = !true;
     }
 
