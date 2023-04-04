@@ -39,9 +39,10 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void Instructions()
+    public void Instructions()
     {
         Debug.Log("Bienvenu, vous devez trouver la sortie du donjon qui est une porte en bois.");
+        Debug.Log("Utilisez W,A,S,D pour déplacer votre personnage dans le donjon.");
         Debug.Log("Vous devez éviter de toucher au mur avec des piques, les trappes au sol et les squelettes.");
         Debug.Log("Chaque obstacle vous rajoute une pénalité sur votre temps d'une seconde.");
         Debug.Log("Il y a un coffre dans le niveau qui permet de faire disparaitre des obstacles pour atteindre la fin.");
