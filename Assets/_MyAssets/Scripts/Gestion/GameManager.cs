@@ -32,16 +32,11 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+
         _accrochage = 0;
         _tempsDebut = Time.time;
 
 
-    }
-
-    public void Instructions()
-    {
-  
     }
 
     public void AugmenterAccrochage()
