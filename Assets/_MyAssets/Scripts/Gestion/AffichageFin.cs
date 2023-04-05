@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -7,16 +5,15 @@ public class AffichageFin : MonoBehaviour
 {
     [SerializeField] private TMP_Text _txtAccrochages = default;
     [SerializeField] private TMP_Text _txtTemps = default;
+    GameManager _gameManager;
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        
+        _gameManager = FindObjectOfType<GameManager>();
+        _txtTemps.text = _gameManager.VoirStatistiqueTotal()[0];
+        _txtAccrochages.text = _gameManager.VoirStatistiqueTotal()[1];
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

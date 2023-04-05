@@ -3509,7 +3509,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1854037451}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GestionInstructions, Assembly-CSharp
         m_MethodName: FermerPanel
         m_Mode: 1
@@ -5422,28 +5422,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1854037452}
-  - component: {fileID: 1854037451}
+  - component: {fileID: 1854037453}
   m_Layer: 0
-  m_Name: GestionInstructions
+  m_Name: GestionAffichage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1854037451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1854037450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b8f545c76efb6340bc50da92a6b3828, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _instructionPanel: {fileID: 1334953533}
-  _instructionText: {fileID: 1428304247}
 --- !u!4 &1854037452
 Transform:
   m_ObjectHideFlags: 0
@@ -5459,6 +5445,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1854037453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854037450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f758cf198c3ce24994ad6811ca13bfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _txtAccrochages: {fileID: 1139154584}
+  _txtTemps: {fileID: 1305834335}
 --- !u!1 &1881145899
 GameObject:
   m_ObjectHideFlags: 0

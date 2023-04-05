@@ -1,4 +1,4 @@
-using TMPro;
+ï»¿using TMPro;
 using UnityEngine;
 
 public class GestionInstructions : MonoBehaviour
@@ -9,17 +9,17 @@ public class GestionInstructions : MonoBehaviour
 
     string[] instructions = {
       "1. Bienvenu, vous devez trouver la sortie du donjon qui est une porte en bois.",
-      "2. Utilisez W,A,S,D pour déplacer votre personnage dans le donjon.",
-      "3. Vous devez éviter de toucher au mur avec des piques, les trappes au sol et les squelettes.",
-      "4. Chaque obstacle vous rajoute une pénalité sur votre temps d'une seconde.",
+      "2. Utilisez W,A,S,D pour dÃ©placer votre personnage dans le donjon.",
+      "3. Vous devez Ã©viter de toucher au mur avec des piques, les trappes au sol et les squelettes.",
+      "4. Chaque obstacle vous rajoute une pÃ©nalitÃ© sur votre temps d'une seconde.",
       "5. Il y a un coffre dans le niveau qui permet de faire disparaitre des obstacles pour atteindre la fin.",
-      "6. Vous avez 3 niveaux à compléter." };
+      "6. Vous avez 3 niveaux Ã  complÃ©ter." };
 
     private void Start()
     {
         foreach (var ligne in instructions)
         {
-            _instructionText.text += ligne +"\r\n";
+            _instructionText.text += ligne + "\r\n";
         }
     }
 

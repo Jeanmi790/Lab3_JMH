@@ -24,8 +24,8 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        float temps = Time.time - _gameManager.retournerTempDebut();
-        _txtTemps.text = "Temps : " + temps.ToString("f2");
+        AffichageTemps();
+        AffichageAccrochage(_gameManager.retournerAccrochage());
         entrerEnPause();
     }
 
@@ -41,6 +41,12 @@ public class UIManager : MonoBehaviour
         {
             retournerEnJeu();
         }
+    }
+
+    public void AffichageTemps()
+    {
+        float temps = Time.time - _gameManager.retournerTempDebut();
+        _txtTemps.text = "Temps : " + temps.ToString("f2");
     }
 
     public void AffichageAccrochage(int accrochages)

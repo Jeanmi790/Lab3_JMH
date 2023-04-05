@@ -9,16 +9,21 @@ public class Player : MonoBehaviour
    
     Rigidbody _rbPlayer;
 
+
     private void Start()
     {
 
         this.transform.position = positionini;
         _rbPlayer = GetComponent<Rigidbody>();
+ 
     }
+    
     
     private void FixedUpdate()
     {
         MouvementsJoueur();
+
+    
 
     }
 
@@ -27,6 +32,7 @@ public class Player : MonoBehaviour
         float positionX = Input.GetAxis("Horizontal");
         float positionZ = Input.GetAxis("Vertical");
         float temps = Time.fixedDeltaTime;
+
 
         Vector3 direction = new Vector3(positionX, 0f, positionZ);
 
@@ -39,6 +45,8 @@ public class Player : MonoBehaviour
         //Vérifier que la direction n'est pas 0
         if (direction != Vector3.zero)
         {
+          
+
             //Enregistrer le vecteur en rotation
             Quaternion targetRotation = Quaternion.LookRotation(direction);
 

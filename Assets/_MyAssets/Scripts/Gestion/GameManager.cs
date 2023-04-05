@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class GameManager : MonoBehaviour
     int nbAccrochageNiv2;
     int nbAccrochageNiv3;
     int nbAccrochageTotal;
+    Player _player;
 
     private void Awake()
     {
@@ -29,22 +32,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
     void Start()
     {
-
         _accrochage = 0;
+        _tempsDebut = 0;
+        _tempsFinal = 0;
+        nbAccrochageTotal = 0;
         _tempsDebut = Time.time;
 
+    }
+
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            Destroy(gameObject);
+        } 
 
     }
 
     public void AugmenterAccrochage()
     {
         _accrochage++;
-        UIManager _uiManager = new();
-        _uiManager.AffichageAccrochage(_accrochage);
-
     }
 
     public int retournerAccrochage()
@@ -55,8 +64,8 @@ public class GameManager : MonoBehaviour
     public void ReinitialiserAccrochage()
     {
         _accrochage = 0;
-
     }
+
 
     public float retournerTempDebut()
     {
@@ -95,11 +104,11 @@ public class GameManager : MonoBehaviour
         nbAccrochageNiv3 = accrochages;
 
     }
+
     public void StatistiqueTotal()
     {
-        tempsTotal = tempsNiv1 + tempsNiv2 + tempsNiv3;
-        nbAccrochageTotal = nbAccrochageNiv1 + nbAccrochageNiv2 + nbAccrochageNiv3;
-
+        calculerTempsFin(Time.time);
+        nbAccrochageTotal = _accrochage;
     }
 
 
@@ -123,22 +132,24 @@ public class GameManager : MonoBehaviour
         return "Temps Niv 3: " + tempsNiv3 + " Nombre d'accrochage Niv 3: " + nbAccrochageNiv3;
     }
 
-    public string VoirStatistiqueTotal()
+    public string[] VoirStatistiqueTotal()
     {
         StatistiqueTotal();
-        return "Temps Total: " + tempsTotal + " Nombre d'accrochage Total: " + nbAccrochageTotal;
+        string[] stats = { tempsTotal.ToString("f2"), nbAccrochageTotal.ToString() };
+
+        return stats;
     }
 
 
-    public void FinJeu()
-    {
+    //public void FinJeu()
+    //{
 
-        Debug.Log(VoirStatistiqueNiv1()[0] + " " + VoirStatistiqueNiv1()[1]);
-        Debug.Log(VoirStatistiqueNiv2());
-        Debug.Log(VoirStatistiqueNiv3());
-        Debug.Log(VoirStatistiqueTotal());
+    //    Debug.Log(VoirStatistiqueNiv1()[0] + " " + VoirStatistiqueNiv1()[1]);
+    //    Debug.Log(VoirStatistiqueNiv2());
+    //    Debug.Log(VoirStatistiqueNiv3());
+    //    Debug.Log(VoirStatistiqueTotal());
 
 
-    }
+    //}
 
 }

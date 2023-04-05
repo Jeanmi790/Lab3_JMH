@@ -13,6 +13,7 @@ public class EndGame : MonoBehaviour
     {
         _gameManager = FindObjectOfType<GameManager>();
         _player = FindObjectOfType<Player>();
+        _scene = FindObjectOfType<GestionScene>();
     }
 
 
@@ -21,42 +22,40 @@ public class EndGame : MonoBehaviour
     {
         int noScene = SceneManager.GetActiveScene().buildIndex;
 
-        if ((!_collision) && (collision.gameObject.tag == "Player"))
+        if ((_collision) && (collision.gameObject.tag != "Player"))
         {
+            return;
+        }
 
-            switch (noScene)
-            {
-                case 1:
-                    _gameManager.StatistiqueNiv1(_gameManager.retournerAccrochage(), Time.time);
-                    _collision = true;
-                    Debug.Log("Prochain niveau...");
-                    _gameManager.ReinitialiserAccrochage();
-                   _scene.ChargerProchaineScene();
+        switch (noScene)
+        {
+            case 1:
+                _gameManager.StatistiqueNiv1(_gameManager.retournerAccrochage(), Time.time);
+                _collision = true;
+                _scene.ChargerProchaineScene();
 
-                    break;
+                break;
 
-                case 2:
-                    _gameManager.StatistiqueNiv2(_gameManager.retournerAccrochage(), Time.time);
-                    _collision = true;
-                    Debug.Log("Dernier niveau...");
-                    _gameManager.ReinitialiserAccrochage();
-                    _scene.ChargerProchaineScene();
+            case 2:
+                _gameManager.StatistiqueNiv2(_gameManager.retournerAccrochage(), Time.time);
+                _collision = true;
+                _scene.ChargerProchaineScene();
 
-                    break;
+                break;
 
-                case 3:
-                    _gameManager.StatistiqueNiv3(_gameManager.retournerAccrochage(), Time.time);
-                    _collision = true;
-                    _gameManager.calculerTempsFin(Time.time);
-                    _gameManager.FinJeu();
-                    _player.FinDeJeu();
+            case 3:
+                _gameManager.StatistiqueNiv3(_gameManager.retournerAccrochage(), Time.time);
+                _collision = true;
+                _gameManager.calculerTempsFin(Time.time);
+                _player.FinDeJeu();
+                _scene.ChargerProchaineScene();
 
-                    break;
+                break;
 
-
-            }
 
         }
+
+
 
 
 
