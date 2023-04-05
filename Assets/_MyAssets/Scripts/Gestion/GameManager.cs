@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     float tempsNiv1;
     float tempsNiv2;
     float tempsNiv3;
-    float tempsTotal;
     int nbAccrochageNiv1;
     int nbAccrochageNiv2;
     int nbAccrochageNiv3;
@@ -112,9 +111,9 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public List<string> VoirStatistiqueNiv1()
+    public string[] VoirStatistiqueNiv1()
     {
-        List<string> statistiqueN1 = new List<string>
+        string[] statistiqueN1 = 
         {
             tempsNiv1.ToString("f2"),
             nbAccrochageNiv1.ToString()
@@ -122,20 +121,30 @@ public class GameManager : MonoBehaviour
         return statistiqueN1;
     }
 
-    public string VoirStatistiqueNiv2()
+    public string[] VoirStatistiqueNiv2()
     {
-        return "Temps Niv 2: " + tempsNiv2 + " Nombre d'accrochage Niv 2: " + nbAccrochageNiv2;
+        string[] statistiqueN2 =
+        {
+            tempsNiv2.ToString("f2"),
+            nbAccrochageNiv2.ToString()
+        };
+        return statistiqueN2;
     }
 
-    public string VoirStatistiqueNiv3()
+    public string[] VoirStatistiqueNiv3()
     {
-        return "Temps Niv 3: " + tempsNiv3 + " Nombre d'accrochage Niv 3: " + nbAccrochageNiv3;
+        string[] statistiqueN3 =
+        {
+            tempsNiv3.ToString("f2"),
+            nbAccrochageNiv3.ToString()
+        };
+        return statistiqueN3;
     }
 
     public string[] VoirStatistiqueTotal()
     {
         StatistiqueTotal();
-        string[] stats = { tempsTotal.ToString("f2"), nbAccrochageTotal.ToString() };
+        string[] stats = { _tempsFinal.ToString("f2"), nbAccrochageTotal.ToString() };
 
         return stats;
     }

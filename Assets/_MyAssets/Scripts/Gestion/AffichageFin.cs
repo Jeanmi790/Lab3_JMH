@@ -10,7 +10,7 @@ public class AffichageFin : MonoBehaviour
 
     void Start()
     {
-        _gameManager = FindObjectOfType<GameManager>();
+       _gameManager = FindObjectOfType<GameManager>();
         _txtTemps.text = _gameManager.VoirStatistiqueTotal()[0];
         _txtAccrochages.text = _gameManager.VoirStatistiqueTotal()[1];
 
