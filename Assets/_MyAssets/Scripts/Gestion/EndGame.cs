@@ -46,7 +46,7 @@ public class EndGame : MonoBehaviour
             case 3:
                 _gameManager.StatistiqueNiv3(_gameManager.retournerAccrochage(), Time.time);
                 _collision = true;
-                _gameManager.calculerTempsFin(Time.time);
+                _gameManager.calculerTempsFin(_gameManager.retournerTempsAjuste(),_gameManager.retournerAccrochage());
                 _player.FinDeJeu();
                 _scene.ChargerProchaineScene();
 

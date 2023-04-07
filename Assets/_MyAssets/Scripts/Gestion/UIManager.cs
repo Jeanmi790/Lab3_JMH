@@ -7,10 +7,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text _txtTemps = default;
     [SerializeField] private GameObject _menuPause = default;
     bool _enPause;
+
     int _tempsArrete = 0;
     int _tempsEcoule = 1;
-    GameManager _gameManager;
 
+    GameManager _gameManager;
 
     void Start()
     {
@@ -24,10 +25,11 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        AffichageTemps();
+        AffichageTemps(_gameManager.TempsDebuteQuandJoueurBouge());
         AffichageAccrochage(_gameManager.retournerAccrochage());
         entrerEnPause();
     }
+
 
     private void entrerEnPause()
     {
@@ -43,9 +45,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void AffichageTemps()
+    public void AffichageTemps(float temps)
     {
-        float temps = Time.time - _gameManager.retournerTempDebut();
+        
         _txtTemps.text = "Temps : " + temps.ToString("f2");
     }
 

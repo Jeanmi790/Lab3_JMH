@@ -17,6 +17,10 @@ public class Player : MonoBehaviour
 
     }
 
+    public Vector3 RetournerPosition()
+    {
+        return positionini;
+    }
 
     private void FixedUpdate()
     {

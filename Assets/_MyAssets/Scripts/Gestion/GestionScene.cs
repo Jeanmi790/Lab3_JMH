@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class GestionScene : MonoBehaviour
 {
 
-
     public void RetourMenu()
     {
         SceneManager.LoadScene(0);
@@ -14,7 +13,6 @@ public class GestionScene : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
 
     public void Quitter()
     {
