@@ -13,7 +13,7 @@ public class MouvementSquelettesXaxis : MonoBehaviour
     void Start()
     {
         this.transform.position = positionDebut;
-        temps = Time.deltaTime;
+        temps = Time.fixedDeltaTime;
 
     }
 

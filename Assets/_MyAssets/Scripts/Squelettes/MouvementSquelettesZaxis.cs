@@ -13,7 +13,7 @@ public class MouvementSquelettesZaxis : MonoBehaviour
     void Start()
     {
         this.transform.position = positionDebut;
-        temps = Time.deltaTime;
+        temps = Time.fixedDeltaTime;
 
     }
 
