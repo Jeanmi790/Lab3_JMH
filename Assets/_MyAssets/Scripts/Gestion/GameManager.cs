@@ -48,6 +48,9 @@ public class GameManager : MonoBehaviour
 
     public void ChargerPlayerInfo()
     {
+        if(FindObjectOfType<Player>() == false) {
+            return;
+        }
         player = FindObjectOfType<Player>();
         positionini = player.RetournerPosition();
         positionBody = player.GetComponent<Transform>().position;
@@ -106,7 +109,6 @@ public class GameManager : MonoBehaviour
         if (!positionBody.Equals(positionini))
         {
             _tempsAjuste = Time.time - (_tempsDebut + _temps);
-
         }
         return _tempsAjuste;
     }

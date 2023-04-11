@@ -29,7 +29,7 @@ public class Gestion_Collisions : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         _player.GetComponent<ProBuilderMesh>().GetComponent<MeshRenderer>().material.color = Color.white;
-        _collision = false;
+       
     }
 
 }

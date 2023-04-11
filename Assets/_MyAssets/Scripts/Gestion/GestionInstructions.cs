@@ -10,8 +10,8 @@ public class GestionInstructions : MonoBehaviour
     string[] instructions = {
       "1. Bienvenu, vous devez trouver la sortie du donjon qui est une porte en bois.",
       "2. Utilisez W,A,S,D pour déplacer votre personnage dans le donjon.",
-      "3. Vous devez éviter de toucher au mur avec des piques, les trappes au sol et les squelettes.",
-      "4. Chaque obstacle vous rajoute une pénalité sur votre temps d'une seconde.",
+      "3. Vous devez éviter de toucher les éléments suivant: les murs avec des piques, les trappes au sol, les squelettes et les épées des squelettes dans les cages.",
+      "4. Chaque obstacle blessant vous rajoute une pénalité sur votre temps d'une seconde.",
       "5. Il y a un coffre dans le niveau qui permet de faire disparaitre des obstacles pour atteindre la fin.",
       "6. Vous avez 3 niveaux à compléter." };
 
